@@ -42,7 +42,7 @@ const BestRecommendations = () => {
                     <span className="text-primary text-xl">${hotel.price}</span>
                     <span className="text-sm text-muted-foreground font-normal"> / night</span>
                   </p>
-                  <Button size="sm" className="gold-gradient rounded-full text-xs border-0 text-primary-foreground">
+                  <Button size="sm" className="gold-gradient px-5 py-3 rounded-lg text-xs border-0 text-primary-foreground ">
                     Book
                   </Button>
                 </div>

@@ -4,7 +4,7 @@ const SearchBar = () => {
   return (
     <div className="relative z-20 -mt-12 px-4">
       <div className="container mx-auto max-w-4xl">
-        <div className="glass-strong rounded-full p-2 md:p-3 flex flex-col md:flex-row items-stretch md:items-center gap-2 md:gap-0">
+        <div className="glass-strong rounded-2xl md:rounded-full p-2 md:p-3 flex flex-col md:flex-row items-stretch md:items-center gap-2 md:gap-0">
           {/* Location */}
           <div className="flex items-center gap-3 flex-1 px-5 py-3 md:border-r border-border/50">
             <MapPin size={18} className="text-primary shrink-0" />
@@ -47,7 +47,7 @@ const SearchBar = () => {
             </div>
           </div>
 
-          <button className="gold-gradient rounded-full h-12 w-12 md:h-14 md:w-14 p-0 shrink-0 border-0 shadow-lg mx-auto md:mx-2">
+          <button className="gold-gradient rounded-full h-12 w-12 md:h-14 md:w-14 p-0 shrink-0 border-0 shadow-lg mx-auto md:mx-2 flex justify-center items-center text-white">
             <Search size={20} className="text-primary-foreground" />
           </button>
         </div>
