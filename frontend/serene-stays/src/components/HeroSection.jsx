@@ -12,7 +12,7 @@ const HeroSection = () => {
         loading="eager" />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/35" style={{ background: "linear-gradient(180deg, hsla(30,20%,10%,0.25) 0%, hsla(30,20%,10%,0.7) 100%)" }} />
+      <div className="absolute inset-0 z-10 bg-black/35"  />
 
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <p className="animate-fade-up text-sm md:text-base font-medium tracking-[0.3em] uppercase mb-6" style={{ color: "hsl(38,70%,65%)" }}>
@@ -27,12 +27,12 @@ const HeroSection = () => {
           Discover handpicked luxury accommodations around the world. Unforgettable experiences await at every destination.
         </p>
         <div className="animate-fade-up-delay-3 flex flex-col sm:flex-row gap-4 justify-center">
-          <Button className="gold-gradient rounded-full px-10 py-6 text-base font-semibold border-0 text-primary-foreground shadow-lg">
+          <Button className="gold-gradient rounded-full px-10 md:py-6 text-base font-semibold border-0 text-primary-foreground shadow-lg">
             Book Now
           </Button>
           <Button
             variant="outline"
-            className="rounded-full px-10 py-6 text-base font-semibold border-2"
+            className="rounded-full px-10 py-4 md:py-6 text-base font-semibold border-2"
             style={{ borderColor: "hsl(36,30%,85%)", color: "hsl(36,30%,95%)", background: "transparent" }}>
 
             Learn More

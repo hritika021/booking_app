@@ -13,6 +13,7 @@ const navLinks = [
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [active,setActive]=useState("login");
 
 useEffect(()=>{
   function handleScroll(){
@@ -59,16 +60,33 @@ return()=>{
         </ul>
 
         <div className="hidden md:flex items-center gap-3">
-          <button
-            className={`text-sm font-medium ${
-              scrolled ? "text-foreground hover:text-primary" : "text-primary-foreground/90 hover:text-primary-foreground"
-            }`}
-          >
-            Login
-          </button>
-          <button className="gold-gradient text-sm font-semibold rounded-full px-6 border-0 text-primary-foreground">
-            Register
-          </button>
+     <button
+    onClick={() => setActive("login")}
+    className={` px-6 py-3 border-2 rounded-full text-sm font-medium  transition-all duration-200
+    ${
+      active === "login"
+        ? "gold-gradient text-white border-transparent "
+        : scrolled
+        ? "border-yellow-500 text-yellow-600  hover:gold-gradient hover:text-white"
+        : "border-yellow-500 text-white hover:gold-gradient hover:text-white"
+    }`}
+  >
+    Login
+  </button>
+     <button
+    onClick={() => setActive("login")}
+    className={` px-6 py-3 border-2 rounded-full text-sm font-medium  transition-all duration-200
+    ${
+      active === "register"
+        ? "gold-gradient text-white border-transparent "
+        : scrolled
+        ? "border-yellow-500 text-yellow-600  hover:gold-gradient hover:text-white"
+        : "border-yellow-500 text-white hover:gold-gradient hover:text-white"
+    }`}
+  >
+    Register
+  </button>
+ 
         </div>
 
         {/* Mobile toggle */}
@@ -96,9 +114,9 @@ return()=>{
               </li>
             ))}
           </ul>
-          <div className="flex gap-3 mt-6">
-            <Button variant="outline" className="flex-1 rounded-full">Login</Button>
-            <Button className="flex-1 gold-gradient rounded-full border-0 text-primary-foreground">Register</Button>
+          <div className="flex gap-4 mt-6">
+            <button variant="outline" className="flex-1 py-2 rounded-full">Login</button>
+            <button className="flex-1 py-4 gold-gradient rounded-full border-0 text-primary-foreground">Register</button>
           </div>
         </div>
       )}
