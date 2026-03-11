@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -28,6 +29,7 @@ return()=>{
   window.removeEventListener("scroll",handleScroll)
 }
 },[])
+const navigate=useNavigate();
   return (
     <nav
       className={`fixed py-7 top-0 left-0 right-0 z-50 transition-all duration-500 ${
@@ -61,7 +63,7 @@ return()=>{
 
         <div className="hidden md:flex items-center gap-3">
      <button
-    onClick={() => setActive("login")}
+    onClick={() => {setActive("login");navigate("/login")}}
     className={` px-6 py-3 border-2 rounded-full text-sm font-medium  transition-all duration-200
     ${
       active === "login"
@@ -74,7 +76,7 @@ return()=>{
     Login
   </button>
      <button
-    onClick={() => setActive("login")}
+    onClick={() => {setActive("login");navigate("/register")}}
     className={` px-6 py-3 border-2 rounded-full text-sm font-medium  transition-all duration-200
     ${
       active === "register"

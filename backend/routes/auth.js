@@ -3,6 +3,7 @@ import bcrypt from "bcryptjs";
 import zod, { email } from "zod"
 import User from "../models/User.js";
 import jwt from "jsonwebtoken"
+import { logoutController } from "../controllers/logoutController.js";
 const router=express.Router();
 const registerSchema=zod.object({
     name:zod.string(),
@@ -12,6 +13,7 @@ const registerSchema=zod.object({
 
 })
 router.post("/register", async(req,res)=>{
+    console.log("Received registration data:", req.body);
    const result=registerSchema.safeParse(req.body )
     if(!result.success){
         return res.status(400).json({
@@ -91,6 +93,7 @@ try{
     const token=jwt.sign({id:findUser._id,isAdmin:findUser.isAdmin}, process.env.JWT_SECRET)
     res.cookie("access_token", token,{
         httpOnly:true,}).status(200).json({
+            token,
         msg:"Logged in",
         
             findUser: {
@@ -102,4 +105,5 @@ try{
 return res.status(403).json({msg:err})
 }
 })
+router.post('/logout',logoutController)
 export default router

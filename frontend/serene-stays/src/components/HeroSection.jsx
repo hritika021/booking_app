@@ -12,7 +12,7 @@ const HeroSection = () => {
         loading="eager" />
 
       {/* Overlay */}
-      <div className="absolute inset-0 z-10 bg-black/35"  />
+<div className="absolute inset-0 bg-black/50" style={{ background: "linear-gradient(180deg, hsla(32, 62%, 41%, 0.26) 0%, hsla(30,20%,10%,0.7) 100%)" }} />
 
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <p className="animate-fade-up text-sm md:text-base font-medium tracking-[0.3em] uppercase mb-6" style={{ color: "hsl(38,70%,65%)" }}>
