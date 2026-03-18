@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
+import { UserProfile } from "./ui/userProfile";
+
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -88,6 +90,8 @@ const navigate=useNavigate();
   >
     Register
   </button>
+
+  <UserProfile/>
  
         </div>
 
@@ -119,6 +123,7 @@ const navigate=useNavigate();
           <div className="flex gap-4 mt-6">
             <button variant="outline" className="flex-1 py-2 rounded-full">Login</button>
             <button className="flex-1 py-4 gold-gradient rounded-full border-0 text-primary-foreground">Register</button>
+        
           </div>
         </div>
       )}

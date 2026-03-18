@@ -3,11 +3,13 @@ import HeroSection from "@/components/HeroSection";
 import SearchBar from "@/components/SearchBar";
 import BestRecommendations from "@/components/BestRecommendations";
 import BrandPartners from "@/components/BrandPartners";
-import SuiteCategories from "@/components/SuiteCategories";
+
 import AboutSection from "@/components/AboutSection";
 import Testimonials from "@/components/Testimonials";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
+import Featured from "../components/featured";
+import PropertyType from "../components/Propertytype";
 
 const Index = () => {
   return (
@@ -15,9 +17,10 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <SearchBar />
+      <Featured/>
       <BestRecommendations />
       <BrandPartners />
-      <SuiteCategories />
+      <PropertyType />
       <AboutSection />
       <Testimonials />
       <Newsletter />
